@@ -2827,8 +2827,9 @@ input, select, textarea {
 				content: '\f1ce';
 			}
 
+/***************Caption at bottom of image popUp************/
 		.poptrox-popup .caption {
-			background: #fff;
+			background: #EEEEEE;
 			bottom: 0;
 			cursor: default;
 			font-size: 0.9em;
