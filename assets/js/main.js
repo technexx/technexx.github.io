@@ -22,20 +22,12 @@
 		};
 
 	// Breakpoints.
-//		breakpoints({
-//			xlarge:  [ '1281px',  '1800px' ],
-//			large:   [ '981px',   '1280px' ],
-//			medium:  [ '737px',   '980px'  ],
-//			small:   [ '481px',   '736px'  ],
-//			xsmall:  [ null,      '480px'  ],
-//		});
-
 		breakpoints({
-			xlarge:  [ '1281px',  '3200px' ],
-			large:   [ '981px',   '3200px' ],
-			medium:  [ '737px',   '3200px'  ],
-			small:   [ '481px',   '3200px'  ],
-			xsmall:  [ null,      '3200px'  ],
+			xlarge:  [ '1281px',  '1800px' ],
+			large:   [ '981px',   '1280px' ],
+			medium:  [ '737px',   '980px'  ],
+			small:   [ '481px',   '736px'  ],
+			xsmall:  [ null,      '480px'  ],
 		});
 
 	// Play initial animations on page load.
