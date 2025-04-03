@@ -4,6 +4,45 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+///////////
+
+const popup = document.getElementById('imagePopup');
+const slider = document.querySelector('.image-slider');
+const images = document.querySelectorAll('.image-slider img');
+let counter = 0;
+
+document.getElementById('openPopup').addEventListener('click', () => {
+    popup.style.display = 'flex';
+    setTimeout(() => {
+        popup.classList.add('show');
+    }, 10);
+});
+
+function closePopup() {
+    popup.classList.remove('show');
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 300);
+}
+
+function nextImage() {
+    counter++;
+    if (counter >= images.length) {
+        counter = 0;
+    }
+    slider.style.transform = `translateX(-${counter * 100}%)`;
+}
+
+function prevImage() {
+    counter--;
+    if (counter < 0) {
+        counter = images.length - 1;
+    }
+    slider.style.transform = `translateX(-${counter * 100}%)`;
+}
+
+/////////////////////////////////
+
 (function($) {
 
 	var $window = $(window),

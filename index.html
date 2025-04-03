@@ -50,6 +50,26 @@
 					</section>
 
 				<!-- Two -->
+
+				<button id="openPopup">Open Image Gallery</button>
+
+				<div id="imagePopup" class="popup-overlay">
+					<div class="popup-content">
+						<span class="close-button" onclick="closePopup()">&times;</span>
+						<div class="image-slider">
+							<img src="image1.jpg" alt="Image 1">
+							<img src="image2.jpg" alt="Image 2">
+							<img src="image3.jpg" alt="Image 3">
+							<img src="image4.jpg" alt="Image 4">
+						</div>
+						<div class="navigation">
+							<button onclick="prevImage()">Previous</button>
+							<button onclick="nextImage()">Next</button>
+						</div>
+					</div>
+				</div>
+
+
 					<section id="two">
 						<h2>Recent Work</h2>
 						<div class="row">
