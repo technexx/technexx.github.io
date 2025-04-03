@@ -4,7 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-///////////
+//Gallery pop up code start
 
 const popup = document.getElementById('imagePopup');
 const slider = document.querySelector('.image-slider');
@@ -41,7 +41,13 @@ function prevImage() {
     slider.style.transform = `translateX(-${counter * 100}%)`;
 }
 
-/////////////////////////////////
+popup.addEventListener('click', (event) => {
+    if (event.target === popup) {
+        closePopup();
+    }
+});
+
+//Gallery pop up code end
 
 (function($) {
 
