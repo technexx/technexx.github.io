@@ -6,6 +6,7 @@
 
 //Gallery pop up code start
 
+
 const imagePopups = document.querySelectorAll('.popup-overlay'); // Get all popups
 
 document.addEventListener('click', (event) => {
