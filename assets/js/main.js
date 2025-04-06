@@ -29,16 +29,23 @@ document.addEventListener('click', (event) => {
     }
 
     // Close Popup
-    if (event.target.matches('.close-button')) {
-        const popupId = event.target.onclick.toString().match(/'([^']+)'/)[1];
-        const popup = document.getElementById(popupId);
-        if (popup) {
-            popup.classList.remove('show');
-            setTimeout(() => {
-                popup.style.display = 'none';
-            }, 300);
+
+    const imagePopups = document.querySelectorAll('.popup-overlay');
+    imagePopups.forEach(popup => {
+        if (popup.classList.contains('show')) {
+            const popupContent = popup.querySelector('.popup-content');
+            console.log('Click detected. Popup shown:', popup.id, 'Target:', event.target, 'Content:', popupContent);
+            if (popupContent && !popupContent.contains(event.target)) {
+                console.log('Clicked OUTSIDE content:', popup.id);
+                popup.classList.remove('show');
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                }, 300);
+            } else {
+                console.log('Clicked INSIDE content:', popup.id);
+            }
         }
-    }
+    });
 
     // Next Image
     if (event.target.matches('.arrow-right')) {
