@@ -82,14 +82,15 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 1px solid #ccc;
-    padding: 10px 15px;
+    font-size: 60px; /* Increase for a thicker look (adjust as needed) */
+    color: white; /* Set arrow color to white */
+    background-color: transparent; /* Remove the background */
+    border: none; /* Remove the border */
+    padding: 10px 15px; /* Keep padding for clickable area */
     cursor: pointer;
     user-select: none;
     z-index: 10;
+    line-height: 1; /* Adjust line-height to vertically center the arrow */
 }
 
 .arrow-left {
