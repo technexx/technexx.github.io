@@ -29,11 +29,11 @@
 }
 
 .popup-content {
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 1);
 	padding: 20px;
     border-radius: 8px;
-    max-width: 55vw;
-    max-height: 95vh;
+    max-width: 55vh;
+    max-height: auto;
     position: relative;
     display: flex;
     justify-content: center;
