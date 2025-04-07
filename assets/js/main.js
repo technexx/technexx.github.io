@@ -8,6 +8,40 @@
 
 const imagePopups = document.querySelectorAll('.popup-overlay'); // Get all popups
 
+document.addEventListener('keydown', (event) => {
+    const visiblePopup = document.querySelector('.popup-overlay.show');
+
+    if (visiblePopup) {
+        const popupIndexMatch = visiblePopup.id.match(/imagePopup(\d+)/);
+        if (popupIndexMatch && popupIndexMatch[1]) {
+            const popupIndex = parseInt(popupIndexMatch[1]);
+
+            if (event.key === 'ArrowLeft') {
+                const slider = visiblePopup.querySelector('.image-slider');
+                if (slider) {
+                    let counter = parseInt(slider.dataset.counter || 0);
+                    if (counter > 0) {
+                        counter--;
+                        slider.style.transform = `translateX(-${counter * 100}%)`;
+                        slider.dataset.counter = counter;
+                    }
+                }
+            } else if (event.key === 'ArrowRight') {
+                const slider = visiblePopup.querySelector('.image-slider');
+                if (slider) {
+                    const images = slider.querySelectorAll('img');
+                    let counter = parseInt(slider.dataset.counter || 0);
+                    if (counter < images.length - 1) {
+                        counter++;
+                        slider.style.transform = `translateX(-${counter * 100}%)`;
+                        slider.dataset.counter = counter;
+                    }
+                }
+            }
+        }
+    }
+});
+
 document.addEventListener('click', (event) => {
     // Open Popup
     if (event.target.matches('[id^="openPopup"]')) {
