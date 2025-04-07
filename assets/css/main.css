@@ -99,6 +99,25 @@
 .arrow-right {
     right: 10px;
 }
+
+
+.image-logo-container {
+	text-align: center; /* Centers inline or inline-block content */
+  }
+  
+  .image-logo-container img {
+	/* Existing styles for the image */
+	margin-top: 0px;
+	cursor: pointer;
+	border: 1px solid black;
+	width: 325px;
+	height: 325px;
+  }
+  
+  .image-logo-container h3 {
+	margin-top: 10px; /* Adjust top margin as needed */
+	text-align: center; /* Redundant here if the container is centered, but good practice */
+  }
 /*Gallery popup code end*/
 
 
