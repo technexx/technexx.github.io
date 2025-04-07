@@ -79,18 +79,21 @@
 
 .arrow-left,
 .arrow-right {
+    /* Existing arrow styles */
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 60px; /* Increase for a thicker look (adjust as needed) */
-    color: white; /* Set arrow color to white */
-    background-color: transparent; /* Remove the background */
-    border: none; /* Remove the border */
-    padding: 10px 15px; /* Keep padding for clickable area */
+    font-size: 60px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    padding: 10px 15px;
     cursor: pointer;
     user-select: none;
     z-index: 10;
-    line-height: 1; /* Adjust line-height to vertically center the arrow */
+    line-height: 1;
+    opacity: 0; /* Initially hide the arrows */
+    transition: opacity 0.2s ease-in-out; /* Optional: for a smooth fade-in */
 }
 
 .arrow-left {
@@ -99,6 +102,13 @@
 
 .arrow-right {
     right: 10px;
+}
+
+.popup-overlay.show:hover .arrow-left,
+.popup-overlay.show:hover .arrow-right,
+.popup-content:hover .arrow-left, /* Consider hovering on content too */
+.popup-content:hover .arrow-right {
+    opacity: 1; /* Show arrows on hover */
 }
 
 

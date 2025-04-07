@@ -6,7 +6,6 @@
 
 //Gallery pop up code start
 
-
 const imagePopups = document.querySelectorAll('.popup-overlay'); // Get all popups
 
 document.addEventListener('click', (event) => {
@@ -31,8 +30,11 @@ document.addEventListener('click', (event) => {
 
     // Close Popup
 
-    const imagePopups = document.querySelectorAll('.popup-overlay');
     imagePopups.forEach(popup => {
+    const arrowLeft = popup.querySelector('.arrow-left');
+    const arrowRight = popup.querySelector('.arrow-right');
+    const popupContent = popup.querySelector('.popup-content'); // Or use 'popup' if hovering the overlay is enough
+
         if (popup.classList.contains('show')) {
             const popupContent = popup.querySelector('.popup-content');
             console.log('Click detected. Popup shown:', popup.id, 'Target:', event.target, 'Content:', popupContent);
@@ -46,6 +48,18 @@ document.addEventListener('click', (event) => {
                 console.log('Clicked INSIDE content:', popup.id);
             }
         }
+
+		if (arrowLeft && arrowRight && popupContent) {
+			popupContent.addEventListener('mouseenter', () => {
+				arrowLeft.style.opacity = '1';
+				arrowRight.style.opacity = '1';
+			});
+	
+			popupContent.addEventListener('mouseleave', () => {
+				arrowLeft.style.opacity = '0';
+				arrowRight.style.opacity = '0';
+			});
+		}
     });
 
     // Next Image
