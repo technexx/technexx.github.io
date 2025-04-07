@@ -68,12 +68,14 @@ document.addEventListener('click', (event) => {
         const slider = document.getElementById(`imagePopup${index}`).querySelector('.image-slider');
         const images = slider.querySelectorAll('img');
         let counter = parseInt(slider.dataset.counter || 0);
-        counter++;
-        if (counter >= images.length) {
-            counter = 0;
-        }
-        slider.style.transform = `translateX(-${counter * 100}%)`;
-        slider.dataset.counter = counter;
+
+       // Check if we are at the last image
+         if (counter < images.length - 1) {                
+			counter++;
+         	slider.style.transform = `translateX(-${counter * 100}%)`;
+	     	slider.dataset.counter = counter;
+         }
+            // If counter is at the last image, do nothing
     }
 
     // Previous Image
@@ -82,12 +84,12 @@ document.addEventListener('click', (event) => {
         const slider = document.getElementById(`imagePopup${index}`).querySelector('.image-slider');
         const images = slider.querySelectorAll('img');
         let counter = parseInt(slider.dataset.counter || 0);
-        counter--;
-        if (counter < 0) {
-            counter = images.length - 1;
+
+		if (counter > 0) {
+            counter--;
+            slider.style.transform = `translateX(-${counter * 100}%)`;
+            slider.dataset.counter = counter;
         }
-        slider.style.transform = `translateX(-${counter * 100}%)`;
-        slider.dataset.counter = counter;
     }
 
     // Close popup by clicking outside
